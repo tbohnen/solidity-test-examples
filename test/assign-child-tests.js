@@ -1,9 +1,9 @@
 var ParentApprover = artifacts.require('./ParentApprover.sol');
 
-contract('ParentApprover', function(accounts) {
-  let contract;
-  const parent = accounts[0];
-  const child = accounts[1];
+ contract('ParentApprover', function(accounts) {
+   let contract;
+   const parent = accounts[0];
+   const child = accounts[1];
 
   before(async function(){
     contract = await ParentApprover.deployed();
@@ -18,7 +18,7 @@ contract('ParentApprover', function(accounts) {
   it("Cannot re-assign the child if child is already set", async function() {
     var res = await contract.setChild(accounts[2]);
     const assignedChild = await contract.getChild();
-    assert.equal(assignedChild, child, "Parent is not equal to original parent");
+    assert.equal(assignedChild, child, "Child is not equal to original child");
     assert(assignedChild != accounts[2]);
   });
 

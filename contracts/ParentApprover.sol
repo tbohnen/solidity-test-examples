@@ -3,12 +3,12 @@ pragma solidity ^0.4.17;
 contract ParentApprover {
 
   address private parent;
-  address private child;
+   address private child;
   uint transactionCount = 1;
   event Submission(uint indexed transactionId);
   event Execution(uint indexed transactionId);
 
-  mapping (uint => Transaction) public transactions;
+   mapping (uint => Transaction) public transactions;
 
   struct Transaction {
     address destination;
